@@ -68,6 +68,11 @@ $filmes = [$filme1, $filme2, $filme3];
         <div class="assuntos-estudados">
             <h2>Assuntos estudados</h2>
             <ul>
+                <li> Visibilidade e propriedades: public e private</li>
+                <li>Encapsulamento</li>
+                <li> Métodos Getters  e Setters </li>
+                <li>Métodos Setters para escrituras</li>
+
 
             </ul>
         </div>

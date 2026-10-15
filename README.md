@@ -18,3 +18,9 @@ acessíveis pelo menu de branches no GItHub.
 - Propriedades e métodos
 - Tipos de dados
 - Uso de $this para acessar recursos de dentro da propriedade classe
+
+
+- Visibilidade e propriedades: public e private
+- Encapsulamento
+- Métodos Getters e Setters
+- Métodos Setters para escrituras
