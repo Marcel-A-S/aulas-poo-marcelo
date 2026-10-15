@@ -7,20 +7,27 @@ $filme1 = new Filme();
 $filme1->titulo = "De volta para o Futuro";
 $filme1->ano = 1984;
 $filme1->genero = "Ficção Científica";
+$filme1->direcao = "Pedro Antunes";
 
 $filme2 = new Filme();
 $filme2->titulo = "It a coisa";
 $filme2->ano = 2000;
 $filme2->genero = "Terror";
+$filme2->direcao = "Marcelo";
 
 $filme3 = new Filme();
 $filme3->titulo = "Os filhos de Francisco";
 $filme3->ano = 2011;
 $filme3->genero = "Drama";
+$filme3->direcao = "Seu Francisco";
 
-echo "<pre>";
-var_dump($filme1, $filme2, $filme3);
-echo "</pre>";
+// echo "<pre>";
+// var_dump($filme1, $filme2, $filme3);
+// echo "</pre>";
+
+$filmes = [$filme1, $filme2, $filme3];
+
+
 ?>
 
 <!DOCTYPE html>
@@ -42,11 +49,14 @@ echo "</pre>";
         </header>
 
         <div class="filmes">
-
-            <article>
+<?php foreach($filmes as $filme): ?>
+            <article class="card-filme">
+                <span class="genero"> <?= $filme->genero ?> </span>
+                <h2> <?=  $filme->titulo ?>  ?></h2>
+                <p class= "ano">Lançamento: <?= $filme->ano ?> </p>
 
             </article>
-
+<?php endforeach; ?>
         </div>
 
         <hr>
