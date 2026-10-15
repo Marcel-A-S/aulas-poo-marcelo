@@ -4,9 +4,22 @@ require_once "src/Filme.php";
 
 // Criando um objeto ou uma INSTÂNCIA
 $filme1 = new Filme();
+$filme1->titulo = "De volta para o Futuro";
+$filme1->ano = 1984;
+$filme1->genero = "Ficção Científica";
+
+$filme2 = new Filme();
+$filme2->titulo = "It a coisa";
+$filme2->ano = 2000;
+$filme2->genero = "Terror";
+
+$filme3 = new Filme();
+$filme3->titulo = "Os filhos de Francisco";
+$filme3->ano = 2011;
+$filme3->genero = "Drama";
 
 echo "<pre>";
-var_dump($filme1);
+var_dump($filme1, $filme2, $filme3);
 echo "</pre>";
 ?>
 
