@@ -4,22 +4,22 @@ require_once "src/Filme.php";
 
 // Criando um objeto ou uma INSTÂNCIA
 $filme1 = new Filme();
-$filme1->titulo = "De volta para o Futuro";
-$filme1->ano = 1984;
-$filme1->genero = "Ficção Científica";
-$filme1->direcao = "Pedro Antunes";
+$filme1->setTitulo("De volta para o Futuro");
+$filme1->setAno(1984);
+$filme1->setGenero("Ficção Científica");
+
 
 $filme2 = new Filme();
-$filme2->titulo = "It a coisa";
-$filme2->ano = 2000;
-$filme2->genero = "Terror";
-$filme2->direcao = "Marcelo";
+$filme2->setTitulo("It a coisa");
+$filme2->setAno(2000);
+$filme2->setGenero( "Terror");
+
 
 $filme3 = new Filme();
-$filme3->titulo = "Os filhos de Francisco";
-$filme3->ano = 2011;
-$filme3->genero = "Drama";
-$filme3->direcao = "Seu Francisco";
+$filme3->setTitulo("Os filhos de Francisco");
+$filme3->setAno(2011);
+$filme3->setGenero("Drama");
+
 
 // echo "<pre>";
 // var_dump($filme1, $filme2, $filme3);
@@ -49,18 +49,18 @@ $filmes = [$filme1, $filme2, $filme3];
         </header>
 
         <div class="filmes">
-<?php foreach($filmes as $filme): ?>
-            <article class="card-filme">
-                <span class="genero"> <?= $filme->genero ?> </span>
-                <h2> <?=  $filme->titulo ?>  ?></h2>
-                <p class= "ano">Lançamento: <?= $filme->ano ?> </p>
+            <?php foreach ($filmes as $filme): ?>
+                <article class="card-filme">
+                    <span class="genero"> <?= $filme->getGenero() ?> </span>
+                    <h2> <?= $filme->getTitulo() ?> </h2>
+                    <p class="ano">Lançamento: <?= $filme->getAno() ?> </p>
 
-                <?php if( $filme->ehClassico()):  ?>
-                    <span class="classico">Clássico</span>
-                <?php endif; ?>
-                
-            </article>
-<?php endforeach; ?>
+                    <?php if ($filme->ehClassico()):  ?>
+                        <span class="classico">Clássico</span>
+                    <?php endif; ?>
+
+                </article>
+            <?php endforeach; ?>
         </div>
 
         <hr>
@@ -68,10 +68,7 @@ $filmes = [$filme1, $filme2, $filme3];
         <div class="assuntos-estudados">
             <h2>Assuntos estudados</h2>
             <ul>
-                <li> Classes e Objetos</li>
-                <li> Propriedades e métodos</li> 
-                <li> Tipos de dados</li>
-                <li>Uso de $this para acessar recursos de dentro da propriedade classe</li>
+
             </ul>
         </div>
 
