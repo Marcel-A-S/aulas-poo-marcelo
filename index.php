@@ -55,6 +55,10 @@ $filmes = [$filme1, $filme2, $filme3];
                 <h2> <?=  $filme->titulo ?>  ?></h2>
                 <p class= "ano">Lançamento: <?= $filme->ano ?> </p>
 
+                <?php if( $filme->ehClassico()):  ?>
+                    <span class="classico">Clássico</span>
+                <?php endif; ?>
+                
             </article>
 <?php endforeach; ?>
         </div>
