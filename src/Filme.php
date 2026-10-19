@@ -1,59 +1,59 @@
-<?php 
+<?php
 // src/Filme.php
 
 class Filme
 {
-    
-    private string $titulo;
-    private string $genero;
-    private int $ano;
-    private string $direcao;
 
-    public function ehClassico(): bool
-    {
-        
-        return $this->ano <2000;
+  private string $titulo;
+  private string $genero;
+  private int $ano;
+  private string $direcao;
+
+  public function ehClassico(): bool
+  {
+
+    return $this->ano < 2000;
+  }
+
+  /* Métodos getters: permitem ACESSO/LEITURA ( ler dados) */
+  /* Getters só retornam os dados de cada propriedade. */
+  public function getTitulo()
+  {
+    return $this->titulo;
+  }
+
+  public function getGenero(): string
+  {
+    return $this->genero;
+  }
+
+  public function getAno(): string
+
+  {
+    return $this->ano;
+  }
+
+  /* Métodos setters: permitem ACESSO/ESCRITA (colocar dados) */
+  /* Setters recebem através de parâmetros os dados a serem colocados nas propriedades. */
+  public function setTitulo(string $titulo): void
+  {
+
+    $this->titulo = $titulo;
+  }
+
+  public function setGenero(string $genero): void
+
+  {
+    $this->genero = $genero;
+  }
+
+  public function setAno(int $ano): void
+
+  {
+
+  // Podemos usar os setters para validações/verificações
+    if ($ano > 0) {
+      $this->ano = $ano;
     }
-    
-    /* Métodos getters: permitem ACESSO/LEITURA ( ler dados) */
-    /* Getters só retornam os dados de cada propriedade. */
-      public function getTitulo()
-      {
-        return $this->titulo;
-      }
-
-      public function getGenero(): string
-      {
-        return $this->genero;
-      }
-
-      public function getAno(): string
-
-      {
-        return $this->ano;
-      }
-
-    /* Métodos setters: permitem ACESSO/ESCRITA (colocar dados) */
-    /* Setters recebem através de parâmetros os dados a serem colocados nas propriedades. */
-      public function setTitulo(string $titulo): void
-      {
-
-      $this->titulo = $titulo;
-
-      }
-
-       public function setGenero(string $genero): void
-
-       {
-        $this->genero = $genero;
-       }
-
-       public function setAno(int $ano): void
-
-       {
-        $this->ano = $ano;
-       }
-
-
-
+  }
 }
