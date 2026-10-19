@@ -25,8 +25,8 @@ class Filme
     $this->setAno($ano);
   }
   public function ehClassico(): bool
-  {
 
+  {
     return $this->ano < 2000;
   }
 
