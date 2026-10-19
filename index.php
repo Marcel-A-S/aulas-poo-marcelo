@@ -2,23 +2,13 @@
 // Importando a Classe
 require_once "src/Filme.php";
 
-// Criando um objeto ou uma INSTÂNCIA
-$filme1 = new Filme();
-$filme1->setTitulo("De volta para o Futuro");
-$filme1->setAno(1984);
-$filme1->setGenero("Ficção Científica");
+// Criando os objetos  e passando os dados para o construtor
+$filme1 = new Filme('De Volta para o futuro', 'Ficção', 1985);
 
+$filme2 = new Filme('Toy Stoy', 'Animação', 1995);
 
-$filme2 = new Filme();
-$filme2->setTitulo("It a coisa");
-$filme2->setAno(2000);
-$filme2->setGenero( "Terror");
+$filme3 = new Filme('Homem Aranha', 'Ação', 2026);
 
-
-$filme3 = new Filme();
-$filme3->setTitulo("Os filhos de Francisco");
-$filme3->setAno(2011);
-$filme3->setGenero("Drama");
 
 
 // echo "<pre>";
