@@ -16,9 +16,9 @@ class Filme extends Conteudo
     /* Nesyte ponto chamamos o construtor da superclasse (classe pai) usando parent::__construct(). Isso é necessario pois estes valores pertecem às propriedades da classe pai */
     parent::__construct($titulo, $genero, $ano);
 
-
+//  Já quanto à duração fazemos a atribuição aqui mesmo (afinal)
     $this->duracao = $duracao;
-    
+
 }
 
 

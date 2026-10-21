@@ -25,6 +25,12 @@ class Conteudo
         return $this->ano < 2000;
     }
 
+    public function getTitulo(): string
+    {
+
+        return $this->titulo;
+    }
+
 
     public function getGenero(): string
     {
