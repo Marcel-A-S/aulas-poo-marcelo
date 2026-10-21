@@ -18,7 +18,7 @@ class Filme
     // Atribuindo os valores recebidos pelos parâmetros às propriedades
     $this->titulo = $titulo;
     $this->genero = $genero;
-    // $this->ano = $ano;
+    $this->ano = $ano;
 
     //Dica: podemos (ou dependendo do caso, devemos) usar os setters
     // através do construtor
@@ -30,11 +30,6 @@ class Filme
     return $this->ano < 2000;
   }
 
-
-  public function getTitulo()
-  {
-    return $this->titulo;
-  }
 
   public function getGenero(): string
   {
