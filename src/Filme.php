@@ -18,7 +18,7 @@ class Filme extends Conteudo
 
 //  Já quanto à duração fazemos a atribuição aqui mesmo (afinal)
     $this->duracao = $duracao;
-
+     
 }
 
 
