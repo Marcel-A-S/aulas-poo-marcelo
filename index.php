@@ -14,11 +14,11 @@ $filme2 = new Filme('Toy Stoy', 'Animação', 1995, 145);
 $filme3 = new Filme('Homem Aranha', 'Ação', 2026, 105);
 
 
-$serie1 = new Serie('casa do dragão','ficcao', 2011, 2);
+$serie1 = new Serie('casa do dragão', 'ficcao', 2011, 2);
 
 $serie2 = new Serie('Senhor dos aneis', 'ficcao', 2014, 6);
 
-$series = [$serie1, $serie2];
+
 
 
 
@@ -29,9 +29,9 @@ $series = [$serie1, $serie2];
 $series = [$serie1, $serie2];
 
 
- //echo "<pre>";
+//echo "<pre>";
 // var_dump($filme1, $filme2, $filme3);
- //echo "</pre>";
+//echo "</pre>";
 
 $filmes = [$filme1, $filme2, $filme3];
 
@@ -63,6 +63,8 @@ $filmes = [$filme1, $filme2, $filme3];
                     <h2> <?= $filme->getTitulo() ?> </h2>
                     <p class="ano">Lançamento: <?= $filme->getAno() ?> </p>
 
+                    <p> <?= $filme->getDescricao() ?></p>
+
                     <?php if ($filme->ehClassico()):  ?>
                         <span class="classico">Clássico</span>
                     <?php endif; ?>
@@ -73,20 +75,23 @@ $filmes = [$filme1, $filme2, $filme3];
 
         <hr>
 
-<div class="series">
+        <div class="series">
 
-<?php foreach($series as $serie): ?>
-    <article class="card-serie"></article>
-    <span class="genero"> <?= $serie->getGenero() ?></span>
-    <h2> <?= $serie->getTitulo() ?></h2>
-    <p class="ano"> Lançamento: <?= $serie->getAno() ?> </p>
+            <?php foreach ($series as $serie): ?>
+                <article class="card-serie">
+                    <span class="genero"> <?= $serie->getGenero() ?></span>
+                    <h2> <?= $serie->getTitulo() ?></h2>
+                    <p class="ano"> Lançamento: <?= $serie->getAno() ?> </p>
 
-    <?php if($serie->ehClassico()): ?>
-        <span class="classico">Classico</span>
-        <?php endif; ?>
+                    <p> <?= $serie->getDescricao() ?></p>
 
+                    <?php if ($serie->ehClassico()): ?>
+                        <span class="classico">Classico</span>
+                    <?php endif; ?>
+                </article>
+            <?php endforeach; ?>
 
-</div>
+        </div>
 
 
         <div class="assuntos-estudados">
