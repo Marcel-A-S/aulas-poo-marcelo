@@ -3,7 +3,10 @@
 // Conteudo 
 class Conteudo
 
-{
+{  
+    /* Visibilidade protected:
+    Fica visível na propriedade superclasse (pai) em que foi dclarada (conteudo)
+    e também para as subclasse (filha) Serie e Filme */
     protected string $titulo;
     private string $genero;
     private int $ano;

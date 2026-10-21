@@ -20,13 +20,13 @@ class Serie extends Conteudo
     // 5) (na index.php) Mostre estes dois objetos usando var_dump
 
     public function __construct(
-        string $titulo, 
-        string $genero, 
-        int $ano, 
-        int $temporada)
+        string $titulo,
+        string $genero,
+        int $ano,
+        int $temporada
+    ) 
+
     {
-
-
 
         // CONTEUDO
         parent::__construct($titulo, $genero, $ano);
@@ -36,21 +36,20 @@ class Serie extends Conteudo
     }
 
 
-public function getTemporada(): int
-{
-    return $this->temporada;
+    public function getTemporada(): int
+    {
+        return $this->temporada;
+    }
 
-}
+    public function setTemporada(int $temporada): void
+    {
+        $this->temporada = $temporada;
+    }
 
-public function setTemporada (int $temporada): void
-{
-     $this->temporada = $temporada;
+    public function getDescricao(): string
 
-}
+    {
 
-
-
-
-
-
+        return " A serie $this->titulo possui $this->temporada temporadas.";
+    }
 }
