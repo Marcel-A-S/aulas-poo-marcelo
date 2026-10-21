@@ -14,13 +14,17 @@ $filme2 = new Filme('Toy Stoy', 'Animação', 1995, 145);
 $filme3 = new Filme('Homem Aranha', 'Ação', 2026, 105);
 
 
-$serie1 = new Serie('xx','terror', 2011, 2);
+$serie1 = new Serie('casa do dragão','ficcao', 2011, 2);
 
 $serie2 = new Serie('Senhor dos aneis', 'ficcao', 2014, 6);
 
-echo "<pre>";
-var_dump ($serie1, $serie2);
-echo "</pre>";
+$series = [$serie1, $serie2];
+
+
+
+// echo "<pre>";
+//var_dump ($serie1, $serie2);
+// echo "</pre>";
 
 $series = [$serie1, $serie2];
 
@@ -68,6 +72,22 @@ $filmes = [$filme1, $filme2, $filme3];
         </div>
 
         <hr>
+
+<div class="series">
+
+<?php foreach($series as $serie): ?>
+    <article class="card-serie"></article>
+    <span class="genero"> <?= $serie->getGenero() ?></span>
+    <h2> <?= $serie->getTitulo() ?></h2>
+    <p class="ano"> Lançamento: <?= $serie->getAno() ?> </p>
+
+    <?php if($serie->ehClassico()): ?>
+        <span class="classico">Classico</span>
+        <?php endif; ?>
+
+
+</div>
+
 
         <div class="assuntos-estudados">
             <h2>Assuntos estudados</h2>

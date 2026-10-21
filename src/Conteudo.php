@@ -4,7 +4,7 @@
 class Conteudo
 
 {
-    private string $titulo;
+    protected string $titulo;
     private string $genero;
     private int $ano;
 
