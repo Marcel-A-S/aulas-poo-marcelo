@@ -1,10 +1,10 @@
 <?php
 // src/Conteudo.php
 // Conteudo
- 
+
 abstract class Conteudo
 
-{  
+{
     /* Visibilidade protected:
     Fica visível na propriedade superclasse (pai) em que foi dclarada (conteudo)
     e também para as subclasse (filha) Serie e Filme */
@@ -12,10 +12,10 @@ abstract class Conteudo
     private string $genero;
     private int $ano;
 
-    public function __construct(string $titulo, string $genero, int $ano) 
+    public function __construct(string $titulo, string $genero, int $ano)
 
     {
-        
+
         $this->titulo = $titulo;
         $this->genero = $genero;
         $this->ano = $ano;
@@ -23,6 +23,15 @@ abstract class Conteudo
 
         $this->setAno($ano);
     }
+
+    // Declarando um método abstrato
+    /* Criamos um "contrat", uma obrigatoriedade para as subclasses.
+    ou sejá, elas serão OBRIGADAS a implementar este método.
+    OBS: não colocamos chaves, pois aqui é apenas a declaração (
+    ou assinatura) do método */
+    abstract public function getDescricao(): string;
+
+
     public function ehClassico(): bool
 
     {
