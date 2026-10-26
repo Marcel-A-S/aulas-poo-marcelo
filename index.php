@@ -26,7 +26,7 @@ $serie2 = new Serie('Senhor dos aneis', 'ficcao', 2014, 6);
 //var_dump ($serie1, $serie2);
 // echo "</pre>";
 
-$series = [$serie1, $serie2];
+
 
 
 //echo "<pre>";
@@ -42,6 +42,8 @@ não é possivel criar objeto/instância diretamente À partir de classes abstra
 // $conteudo = new Conteudo('Senhor dos Aneis', 'Fantasia', 2001);
 // var_dump($conteudo);
 
+// Lista com objetos FFilme e serie
+$conteudos = [$filme1, $filme2, $serie1, $serie2];
 
 ?>
 
@@ -51,7 +53,7 @@ não é possivel criar objeto/instância diretamente À partir de classes abstra
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minha Coleção de Filmes</title>
+    <title>Minha Coleção de Filmes e series</title>
     <link rel="stylesheet" href="css/estilo.css">
 </head>
 
@@ -63,16 +65,19 @@ não é possivel criar objeto/instância diretamente À partir de classes abstra
             <p>Três filmes para descobrir, rever e se divertir</p>
         </header>
 
-        <div class="filmes">
-            <?php foreach ($filmes as $filme): ?>
+        <div class="conteudos">
+            <?php foreach ($conteudos as $conteudo): ?>
                 <article class="card-filme">
-                    <span class="genero"> <?= $filme->getGenero() ?> </span>
-                    <h2> <?= $filme->getTitulo() ?> </h2>
-                    <p class="ano">Lançamento: <?= $filme->getAno() ?> </p>
+                    <span class="genero"> <?= $conteudo->getGenero() ?> </span>
+                    <h2> <?= $conteudo->getTitulo() ?> </h2>
+                    <p class="ano">Lançamento: <?= $conteudo->getAno() ?> </p>
 
-                    <p> <?= $filme->getDescricao() ?></p>
 
-                    <?php if ($filme->ehClassico()):  ?>
+                    <!-- POLIMORFISMO: a mesma chamad (getDescrição) de método,
+                     mas usando implementações deferentes -->
+                    <p> <?= $conteudo->getDescricao() ?></p>
+
+                    <?php if ($conteudo->ehClassico()):  ?>
                         <span class="classico">Clássico</span>
                     <?php endif; ?>
 
@@ -82,35 +87,17 @@ não é possivel criar objeto/instância diretamente À partir de classes abstra
 
         <hr>
 
-        <div class="series">
-
-            <?php foreach ($series as $serie): ?>
-                <article class="card-serie">
-                    <span class="genero"> <?= $serie->getGenero() ?></span>
-                    <h2> <?= $serie->getTitulo() ?></h2>
-                    <p class="ano"> Lançamento: <?= $serie->getAno() ?> </p>
-
-                    <p> <?= $serie->getDescricao() ?></p>
-
-                    <?php if ($serie->ehClassico()): ?>
-                        <span class="classico">Classico</span>
-                    <?php endif; ?>
-                </article>
-            <?php endforeach; ?>
-
-        </div>
-
+        
 
         <div class="assuntos-estudados">
             <h2>Assuntos estudados</h2>
             <ul>
-                <li> Classe pai (ou superclase): <b>Conteudo</b></li>
-                <li>Classe filha (subclasse): <b>Filme</b> <b>Serie</b> </li>
-                <li> Herança utilizando <b>extends</b> </li>
-                <li>Herança com propriedades e métodos</li>
-                <li> Visibilidade <b>protected</b> na superclasse permitindo o acesso através das subclasses.</li>
-                <li> Construtor da superclasse através de <b>parent::__construct()</b></li>
-                <li>Propriedades especificas das subclasses</li>
+                <li>Classe abstrata: conteudo</li>
+                <li>Impossibilidade de instanciar diretamente uma classe abstrata</li>
+                <li> Método abstrato getDescrição()</li>
+                <li>Obriga a implementação do método abstrato pelas classes filhas  filmes e serie</li>
+                <li>Plomorfismo: a mesma chamada a getDescrição utilizada a implementação de cada classe</li>
+                
             </ul>
         </div>
 
