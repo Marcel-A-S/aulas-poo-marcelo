@@ -67,7 +67,7 @@ $conteudos = [$filme1, $filme2, $serie1, $serie2];
 
         <div class="conteudos">
             <?php foreach ($conteudos as $conteudo): ?>
-                <article class="card-filme">
+                <article class="card-conteudo">
                     <span class="genero"> <?= $conteudo->getGenero() ?> </span>
                     <h2> <?= $conteudo->getTitulo() ?> </h2>
                     <p class="ano">Lançamento: <?= $conteudo->getAno() ?> </p>
@@ -97,7 +97,7 @@ $conteudos = [$filme1, $filme2, $serie1, $serie2];
                 <li> Método abstrato getDescrição()</li>
                 <li>Obriga a implementação do método abstrato pelas classes filhas  filmes e serie</li>
                 <li>Plomorfismo: a mesma chamada a getDescrição utilizada a implementação de cada classe</li>
-                
+
             </ul>
         </div>
 
