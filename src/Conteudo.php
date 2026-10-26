@@ -1,7 +1,8 @@
 <?php
 // src/Conteudo.php
-// Conteudo 
-class Conteudo
+// Conteudo
+ 
+abstract class Conteudo
 
 {  
     /* Visibilidade protected:
